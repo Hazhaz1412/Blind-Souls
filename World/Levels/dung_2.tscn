@@ -1,18 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://dejw1jnlxbbys"]
+[gd_scene format=3 uid="uid://dooxw1fjuf1f8"]
 
-[ext_resource type="Script" path="res://World/Levels/dung_2.gd" id="1_dung_2_script"]
-[ext_resource type="Texture2D" uid="uid://bdn86477hl8c1" path="res://World/Levels/Assets/Dung2.png" id="1_byop4"]
+[ext_resource type="Script" uid="uid://buuf33tne8jqr" path="res://World/Levels/dung_2.gd" id="1_dung_2_script"]
+[ext_resource type="Texture2D" uid="uid://dg7a5dyvvm40v" path="res://World/Levels/Assets/Dung2_2.png" id="2_hpoje"]
 [ext_resource type="Texture2D" uid="uid://8ywrjpniyq8l" path="res://World/Levels/Assets/gai.png" id="2_ko4o6"]
 [ext_resource type="Script" uid="uid://ccovudhfoax24" path="res://Shared/Components/spawn_point.gd" id="3_gcfge"]
 [ext_resource type="Script" uid="uid://b5ylus80q50tt" path="res://Shared/Components/transition_trigger.gd" id="4_pa71k"]
 [ext_resource type="Texture2D" uid="uid://c4h3jtyrm4qmu" path="res://World/Levels/Assets/hang_rao.png" id="5_jd014"]
 [ext_resource type="PackedScene" uid="uid://6qo8el7vb372" path="res://Entities/Player/Player.tscn" id="5_player"]
+[ext_resource type="Texture2D" uid="uid://bh8f6oww1f286" path="res://World/Levels/Assets/cong.png" id="7_8wxt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko4o6"]
 size = Vector2(46.060616, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byop4"]
 size = Vector2(94.66667, 251.52084)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wxt8"]
+size = Vector2(65, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev8vd"]
+size = Vector2(51, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bex8s"]
+size = Vector2(70, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5frhf"]
+size = Vector2(11, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ispfa"]
+size = Vector2(48, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psrum"]
+size = Vector2(8, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc3ro"]
 size = Vector2(130, 185.75)
@@ -24,7 +43,8 @@ size = Vector2(100, 87.5)
 script = ExtResource("1_dung_2_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=237283108]
-texture = ExtResource("1_byop4")
+texture_filter = 1
+texture = ExtResource("2_hpoje")
 
 [node name="TrapGai" type="StaticBody2D" parent="Sprite2D" unique_id=586294020]
 position = Vector2(-17, -15)
@@ -61,6 +81,30 @@ shape = SubResource("RectangleShape2D_byop4")
 position = Vector2(15, 188)
 shape = SubResource("RectangleShape2D_byop4")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=2027860001]
+position = Vector2(-407.5, 37.5)
+shape = SubResource("RectangleShape2D_8wxt8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=272850721]
+position = Vector2(416.5, 260)
+shape = SubResource("RectangleShape2D_ev8vd")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1374004620]
+position = Vector2(105, 262.5)
+shape = SubResource("RectangleShape2D_bex8s")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1197020572]
+position = Vector2(174.5, 241.5)
+shape = SubResource("RectangleShape2D_5frhf")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=754266579]
+position = Vector2(289, -218)
+shape = SubResource("RectangleShape2D_ispfa")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=248026032]
+position = Vector2(-48, -207.5)
+shape = SubResource("RectangleShape2D_psrum")
+
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=324047118]
 position = Vector2(-516, -410.6667)
 scale = Vector2(0.6666667, 0.6666667)
@@ -91,6 +135,11 @@ region_rect = Rect2(16, 24, 32, 24)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D3" unique_id=1366593510]
 position = Vector2(-82, 151.75)
 shape = SubResource("RectangleShape2D_hpoje")
+
+[node name="Cong" type="Sprite2D" parent="Sprite2D" unique_id=803549786]
+position = Vector2(129, -272)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_8wxt8")
 
 [node name="CharacterBody2D" parent="." unique_id=10160273 instance=ExtResource("5_player")]
 z_index = 1

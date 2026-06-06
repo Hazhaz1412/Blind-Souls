@@ -12,7 +12,6 @@ var dialogue_lines: Array[Dictionary] = [] # Array of {"name": String, "text": S
 var current_line_idx: int = 0
 var is_active: bool = false
 
-# Biến khóa cho phép nhấn nút Z tiếp theo (dùng cho cắt cảnh cuối thoại)
 var next_line_allowed: bool = true:
 	set(value):
 		next_line_allowed = value
@@ -23,10 +22,9 @@ var next_line_allowed: bool = true:
 				prompt_label.hide()
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS # Cho phép hoạt động cả khi game bị pause
+	process_mode = Node.PROCESS_MODE_ALWAYS 
 	hide_dialogue()
 
-# Bắt đầu hiển thị chuỗi hội thoại
 func start_dialogue(lines: Array[Dictionary]) -> void:
 	dialogue_lines = lines
 	current_line_idx = 0
