@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b5ylus80q50tt" path="res://Shared/Components/transition_trigger.gd" id="2_7bqg7"]
 [ext_resource type="PackedScene" uid="uid://6qo8el7vb372" path="res://Entities/Player/Player.tscn" id="2_qqu0w"]
 [ext_resource type="Script" uid="uid://ccovudhfoax24" path="res://Shared/Components/spawn_point.gd" id="3_7bqg7"]
-[ext_resource type="Texture2D" uid="uid://dtug11ef6ebxn" path="res://World/Levels/Assets/lever2.png" id="4_0slex"]
+[ext_resource type="Texture2D" uid="uid://bvxxlewvs66ok" path="res://World/Levels/Assets/lever1.png" id="4_0slex"]
 [ext_resource type="Script" uid="uid://4j3yr11qfxwa" path="res://World/Levels/lever.gd" id="5_lever_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihx15"]

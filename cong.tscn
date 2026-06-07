@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://7nrapk8cpdun"]
+
+[ext_resource type="PackedScene" uid="uid://bet7nw3karj88" path="res://World/Levels/cong.tscn" id="1_kkoyv"]
+
+[node name="Cong" unique_id=1469473314 instance=ExtResource("1_kkoyv")]

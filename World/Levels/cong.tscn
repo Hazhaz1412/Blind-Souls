@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bet7nw3karj88"]
+
+[ext_resource type="Texture2D" uid="uid://bh8f6oww1f286" path="res://World/Levels/Assets/cong.png" id="1_i40s7"]
+[ext_resource type="Script" path="res://World/Levels/cong.gd" id="2_gdscript"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i63x"]
+size = Vector2(134, 114)
+
+[node name="Cong" type="Sprite2D" unique_id=1469473314]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i40s7")
+script = ExtResource("2_gdscript")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=625391651]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=779171518]
+position = Vector2(3, 11)
+shape = SubResource("RectangleShape2D_0i63x")

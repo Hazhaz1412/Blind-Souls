@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://b5ylus80q50tt" path="res://Shared/Components/transition_trigger.gd" id="4_pa71k"]
 [ext_resource type="Texture2D" uid="uid://c4h3jtyrm4qmu" path="res://World/Levels/Assets/hang_rao.png" id="5_jd014"]
 [ext_resource type="PackedScene" uid="uid://6qo8el7vb372" path="res://Entities/Player/Player.tscn" id="5_player"]
-[ext_resource type="Texture2D" uid="uid://bh8f6oww1f286" path="res://World/Levels/Assets/cong.png" id="7_8wxt8"]
+[ext_resource type="PackedScene" uid="uid://bet7nw3karj88" path="res://World/Levels/cong.tscn" id="7_8wxt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko4o6"]
 size = Vector2(46.060616, 48)
@@ -38,6 +38,9 @@ size = Vector2(130, 185.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpoje"]
 size = Vector2(100, 87.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i63x"]
+size = Vector2(67, 30)
 
 [node name="Node2D" type="Node2D" unique_id=1455450023]
 script = ExtResource("1_dung_2_script")
@@ -136,10 +139,21 @@ region_rect = Rect2(16, 24, 32, 24)
 position = Vector2(-82, 151.75)
 shape = SubResource("RectangleShape2D_hpoje")
 
-[node name="Cong" type="Sprite2D" parent="Sprite2D" unique_id=803549786]
-position = Vector2(129, -272)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_8wxt8")
+[node name="Cong2" parent="Sprite2D" unique_id=1469473314 instance=ExtResource("7_8wxt8")]
+position = Vector2(383.00003, -276.5)
+scale = Vector2(0.46875, 0.44270837)
+gate_id = "gate_2"
+
+[node name="Cong" parent="Sprite2D" unique_id=1078139340 instance=ExtResource("7_8wxt8")]
+position = Vector2(126, -276.5)
+scale = Vector2(0.5, 0.4531251)
+
+[node name="Area2D2" type="Area2D" parent="Sprite2D" unique_id=1236077214]
+script = ExtResource("4_pa71k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D2" unique_id=386636090]
+position = Vector2(335.5, 309)
+shape = SubResource("RectangleShape2D_0i63x")
 
 [node name="CharacterBody2D" parent="." unique_id=10160273 instance=ExtResource("5_player")]
 z_index = 1

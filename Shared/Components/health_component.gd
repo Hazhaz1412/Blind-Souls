@@ -21,12 +21,12 @@ func _ready() -> void:
 func damage(amount: float, source_position: Vector2 = Vector2.ZERO) -> void:
 	if is_invincible or current_health <= 0.0:
 		return
-		
+
 	current_health -= amount
 	hit_received.emit(amount, source_position)
 
 func heal(amount: float) -> void:
 	if current_health <= 0.0:
-		return # Đã chết thì không hồi máu
-		
+		return
+
 	current_health += amount

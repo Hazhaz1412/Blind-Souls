@@ -7,7 +7,7 @@ extends Resource
 @export var play_time: float = 0.0
 @export var save_date: String = ""
 
-# Lưu trữ thông tin tiến trình game
+
 @export var defeated_enemies: Array[String] = []
 @export var opened_chests: Array[String] = []
 @export var inventory: Array[String] = []
