@@ -103,7 +103,7 @@ position = Vector2(220, -4.5)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=448664565]
 script = ExtResource("1_e6dkf")
-target_level_path = "res://World/Levels/dung_2.tscn"
+target_level_path = "uid://dooxw1fjuf1f8"
 target_spawn_id = "from_dung_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1428611543]

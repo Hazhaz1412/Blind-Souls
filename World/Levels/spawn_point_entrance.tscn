@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://jcrqxm2py8e3"]
+
+[ext_resource type="Script" uid="uid://ccovudhfoax24" path="res://Shared/Components/spawn_point.gd" id="1_811nb"]
+
+[node name="SpawnPoint_Entrance" type="Marker2D" unique_id=814936897]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("1_811nb")
+spawn_id = "from_dung_1"

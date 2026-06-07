@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c7thna2m8avn3"]
+
+[ext_resource type="Texture2D" uid="uid://bbtmwb8wgpgs1" path="res://World/Levels/Assets/dung_3_nz.png" id="1_8vrxg"]
+[ext_resource type="PackedScene" uid="uid://jcrqxm2py8e3" path="res://World/Levels/spawn_point_entrance.tscn" id="2_fs0c2"]
+[ext_resource type="Script" uid="uid://b5ylus80q50tt" path="res://Shared/Components/transition_trigger.gd" id="3_j13my"]
+[ext_resource type="PackedScene" uid="uid://6qo8el7vb372" path="res://Entities/Player/Player.tscn" id="4_8vrxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrxg"]
+size = Vector2(56, 17)
+
+[node name="Node2D" type="Node2D" unique_id=1630229026]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628949783]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_8vrxg")
+
+[node name="SpawnPoint_Entrance" parent="Sprite2D" unique_id=814936897 instance=ExtResource("2_fs0c2")]
+position = Vector2(-229, 161)
+spawn_id = "dung_2_to_3"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1473929008]
+scale = Vector2(0.6642445, 0.6647156)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=1148403750]
+polygon = PackedVector2Array(-459.16827, -352.03024, -480.24487, -354.28683, -478, 362, -433, 360, -439.59717, 169.24532, -326, 173, -326, 149, -461, 147, -462, 78, 1.5054698, 78.22894, 3, 102, 16, 98, 19, 41, 315.39594, 46.636486, 311.63226, -75.972336, -324.42874, -72.96353, -322, -105, -345, -119, -345, -161, -417, -160, -419, -183, -459, -187)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=413678870]
+polygon = PackedVector2Array(-457, -312, -459, -356, 478, -356, 479, -306, 52, -313, 35.37854, -322.6944, 15.807433, -324.1988, -4, -313, -260, -313, -272.49002, -326.45538, -299.5885, -328.712, -312.38498, -312.16357)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=1801276682]
+polygon = PackedVector2Array(475, -301, 459, -304, 458, 226, 414, 221, 415, 247, 331, 245, 309, 227, 293, 238, 189, 257, 192, 356, 480, 358)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=500275959]
+polygon = PackedVector2Array(-431, 340, -429, 370, -378, 410, -309, 375, 208, 360, 196, 331, -301, 351, -381, 354)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=745565989]
+script = ExtResource("3_j13my")
+target_level_path = "uid://dooxw1fjuf1f8"
+target_spawn_id = "dung_3_to_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=796722410]
+position = Vector2(-231, 237)
+shape = SubResource("RectangleShape2D_8vrxg")
+
+[node name="CharacterBody2D" parent="Sprite2D" unique_id=10160273 instance=ExtResource("4_8vrxg")]
+texture_filter = 1
+position = Vector2(-237.5, 153.5)
+scale = Vector2(0.7, 0.7)

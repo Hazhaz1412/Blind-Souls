@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://buuf33tne8jqr" path="res://World/Levels/dung_2.gd" id="1_dung_2_script"]
 [ext_resource type="Texture2D" uid="uid://dg7a5dyvvm40v" path="res://World/Levels/Assets/Dung2_2.png" id="2_hpoje"]
 [ext_resource type="Texture2D" uid="uid://8ywrjpniyq8l" path="res://World/Levels/Assets/gai.png" id="2_ko4o6"]
-[ext_resource type="Script" uid="uid://ccovudhfoax24" path="res://Shared/Components/spawn_point.gd" id="3_gcfge"]
 [ext_resource type="Script" uid="uid://b5ylus80q50tt" path="res://Shared/Components/transition_trigger.gd" id="4_pa71k"]
+[ext_resource type="PackedScene" uid="uid://jcrqxm2py8e3" path="res://World/Levels/spawn_point_entrance.tscn" id="5_8wxt8"]
 [ext_resource type="Texture2D" uid="uid://c4h3jtyrm4qmu" path="res://World/Levels/Assets/hang_rao.png" id="5_jd014"]
 [ext_resource type="PackedScene" uid="uid://6qo8el7vb372" path="res://Entities/Player/Player.tscn" id="5_player"]
 [ext_resource type="PackedScene" uid="uid://bet7nw3karj88" path="res://World/Levels/cong.tscn" id="7_8wxt8"]
@@ -119,11 +119,8 @@ target_spawn_id = "from_dung_2"
 position = Vector2(199, 144)
 shape = SubResource("RectangleShape2D_sc3ro")
 
-[node name="SpawnPoint_Entrance" type="Marker2D" parent="Sprite2D" unique_id=1885017729]
+[node name="SpawnPoint_Entrance" parent="Sprite2D" unique_id=814936897 instance=ExtResource("5_8wxt8")]
 position = Vector2(-381.5, -180.5)
-scale = Vector2(0.6666667, 0.6666667)
-script = ExtResource("3_gcfge")
-spawn_id = "from_dung_1"
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Sprite2D" unique_id=109397559]
 
@@ -143,17 +140,27 @@ shape = SubResource("RectangleShape2D_hpoje")
 position = Vector2(383.00003, -276.5)
 scale = Vector2(0.46875, 0.44270837)
 gate_id = "gate_2"
+is_open = null
 
 [node name="Cong" parent="Sprite2D" unique_id=1078139340 instance=ExtResource("7_8wxt8")]
 position = Vector2(126, -276.5)
 scale = Vector2(0.5, 0.4531251)
+gate_id = null
+is_open = null
 
 [node name="Area2D2" type="Area2D" parent="Sprite2D" unique_id=1236077214]
 script = ExtResource("4_pa71k")
+target_level_path = "uid://c7thna2m8avn3"
+target_spawn_id = "dung_2_to_3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D2" unique_id=386636090]
 position = Vector2(335.5, 309)
 shape = SubResource("RectangleShape2D_0i63x")
+
+[node name="SpawnPoint_Entrance2" parent="Sprite2D" unique_id=1882684429 instance=ExtResource("5_8wxt8")]
+position = Vector2(336.00003, 264.00003)
+scale = Vector2(0.44444448, 0.44444448)
+spawn_id = "dung_3_to_2"
 
 [node name="CharacterBody2D" parent="." unique_id=10160273 instance=ExtResource("5_player")]
 z_index = 1

@@ -34,7 +34,7 @@ func close_gate() -> void:
 	is_open = false
 	GameManager.world_state[gate_id] = false
 
- 	var tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 0.5)
 
 	collision_shape.set_deferred("disabled", false)
